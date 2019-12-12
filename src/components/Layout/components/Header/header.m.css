@@ -1,0 +1,15 @@
+.lmsgLogoDesktop {
+  display: block;
+  
+  @media (--mobile) {
+    display: none;
+  }
+}
+
+.lmsgLogoMobile {
+  display: none;
+  
+  @media (--mobile) {
+    display: block;
+  }
+}
