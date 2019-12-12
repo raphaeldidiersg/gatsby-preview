@@ -8,7 +8,7 @@ const IndexPage = ({ data }) => (
   <Layout>
     <ScrollProgress />
     <h1>{data && data.nodePageDAccueil && data.nodePageDAccueil.title}</h1>
-    <h2>From Dev</h2>
+    <h2>From Dev2</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed placerat nisi non justo accumsan imperdiet. Aliquam venenatis sollicitudin condimentum. Nam ornare libero sit amet pellentesque efficitur. Cras finibus blandit cursus. Nulla sit amet est vel urna accumsan ultricies eget a augue. Maecenas gravida commodo fringilla. Donec commodo eget quam non elementum. Integer finibus odio eget diam mollis, non laoreet diam gravida. Sed rhoncus hendrerit odio nec malesuada. Integer eu felis est. Proin facilisis magna in est fermentum, a suscipit lectus iaculis.
 
 Morbi posuere lacinia sem, a pharetra risus viverra ac. Vestibulum convallis velit odio, a fermentum erat aliquam ac. Aenean lobortis feugiat velit, nec tincidunt turpis aliquet non. Sed finibus dui velit, sed consequat nulla egestas eu. Curabitur sed blandit sem. Etiam tincidunt odio et lacus tempor, in ultrices augue tincidunt. Aenean ut vestibulum elit, in aliquet arcu. Sed in suscipit lacus. Suspendisse pretium ipsum sed facilisis mollis. Proin vehicula mauris quis auctor rutrum. Donec iaculis volutpat leo. Nullam pretium lacinia enim, ac laoreet ipsum iaculis non. Vivamus sit amet lacus sit amet lectus commodo interdum.
