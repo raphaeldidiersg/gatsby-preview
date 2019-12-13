@@ -56,7 +56,7 @@ stages:
               appType: 'webAppLinux'
               appName: $(webAppName)
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              # startUpCommand: 'npm run develop'
+              startUpCommand: 'testMp2.json'
           # - task: Npm@1
           #   inputs:
           #     command: 'custom'
