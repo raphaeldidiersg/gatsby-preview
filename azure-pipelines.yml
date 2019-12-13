@@ -61,4 +61,4 @@ stages:
             inputs:
               command: 'custom'
               workingDir: '$(System.DefaultWorkingDirectory)'
-              customCommand: 'npm run develop'
+              customCommand: 'run develop'
