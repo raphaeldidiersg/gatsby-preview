@@ -56,8 +56,8 @@ stages:
               appType: 'webAppLinux'
               appName: $(webAppName)
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-              startUpCommand: 'npm run develop'
-          # - task: CmdLine@2
-          #   displayName: 'Starting npm run develop...'
-          #   inputs:
-          #     script: 'npm run develop'
+              # startUpCommand: 'npm run develop'
+          - task: CmdLine@2
+            displayName: 'Starting npm run develop...'
+            inputs:
+              script: 'npm run develop'
