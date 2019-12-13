@@ -57,7 +57,8 @@ stages:
               appName: $(webAppName)
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               # startUpCommand: 'npm run develop'
-          - task: CmdLine@2
-            displayName: 'Starting npm run develop...'
+          - task: Npm@1
             inputs:
-              script: 'npm run develop'
+              command: 'custom'
+              workingDir: '$(System.DefaultWorkingDirectory)'
+              customCommand: 'npm run develop'
