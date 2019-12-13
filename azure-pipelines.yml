@@ -1,14 +1,7 @@
-# Node.js
-# Build a general Node.js project with npm.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
 trigger:
 - master
 
 variables:
-  # Azure Resource Manager connection created during pipeline creation
-  azureSubscription: '7170242d-eb74-4b23-9435-3bb57e169d53'
   # Web app name
   webAppName: 'gatsby-preview'
   # Environment name
@@ -58,14 +51,13 @@ stages:
         deploy:
           steps:
           - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: gatsby-preview'
             inputs:
-              azureSubscription: $(azureSubscription)
-              appType: webAppLinux
+              azureSubscription: '855-HomlyYou-Exploration-Global-SBX (8e7738f1-43cb-420e-a6a3-4d2bd681b0a0)'
+              appType: 'webAppLinux'
               appName: $(webAppName)
-              runtimeStack: 'NODE|12.9'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
-          - task: CmdLine@2
-            displayName: 'Starting npm run develop...'
-            inputs:
-              script: 'npm run develop'
+              startUpCommand: 'npm run develop'
+          # - task: CmdLine@2
+          #   displayName: 'Starting npm run develop...'
+          #   inputs:
+          #     script: 'npm run develop'
