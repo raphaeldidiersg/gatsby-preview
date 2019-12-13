@@ -10,9 +10,9 @@ variables:
   # Azure Resource Manager connection created during pipeline creation
   azureSubscription: '8e7738f1-43cb-420e-a6a3-4d2bd681b0a0'
   # Web app name
-  webAppName: 'gp-node'
+  webAppName: 'gatsby-preview'
   # Environment name
-  environmentName: 'gp-node'
+  environmentName: 'gatsby-preview'
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
@@ -40,7 +40,7 @@ stages:
         archiveType: zip
         archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         replaceExistingArchive: true
-    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+    - publish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
       artifact: drop
       
 - stage: Deploy
@@ -58,7 +58,7 @@ stages:
         deploy:
           steps:
           - task: AzureWebApp@1
-            displayName: 'Azure Web App Deploy: gp-node'
+            displayName: 'Azure Web App Deploy: gatsby-preview'
             inputs:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
@@ -66,6 +66,6 @@ stages:
               runtimeStack: 'NODE|12.9'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
           - task: CmdLine@2
-            displayName: 'Azure Web App Deploy: gp-node'
+            displayName: 'Starting npm run develop...'
             inputs:
               script: 'npm run develop'
